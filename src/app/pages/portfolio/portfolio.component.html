@@ -1,0 +1,52 @@
+<div class="portfolio d-flex justify-content-center align-items-center py-4">
+  <div class="container text-center">
+    <h1>PORTFOLIO COMPONENT</h1>
+    <app-maintitle [darkColor]="darkColor" class="text-black"></app-maintitle>
+    <div class="row g-5">
+      <ng-container *ngFor="let repeat of [0, 1]">
+        <ng-container *ngFor="let imge of urlImages.sort(); let i = index">
+          <div class="col-lg-4 col-md-6" (click)="handleClickIMage(imge)">
+            <figure class="mb-0 position-relative" role="button">
+              <img class="w-100 rounded-3" [src]="imge" alt="port{{ i }}" />
+              <div
+                class="layer rounded-3 position-absolute start-0 w-100 top-0 h-100 d-flex justify-content-center align-items-center"
+              >
+                <i class="text-white fa-solid fa-plus fa-6x"></i>
+              </div>
+            </figure>
+          </div>
+        </ng-container>
+      </ng-container>
+    </div>
+    <!--
+
+    -->
+    <div
+      *ngIf="isImageClicked"
+      (click)="handleCloseImage($event)"
+      class="overlayImage position-fixed d-flex justify-content-center align-items-center"
+    >
+      <figure class="position-relative w-35">
+        <img class="w-100" [src]="currentImage" alt="logo" />
+        <div
+          class="layerBoxImage d-flex justify-content-between align-items-center position-absolute p-4"
+        >
+          <i
+            (click)="closeImage()"
+            class="close p-2 fa-solid fa-circle-xmark position-absolute top-0 end-0 text-white bg-transparent rounded-circle"
+          ></i>
+          <i
+            id="prev"
+            (click)="prevImage()"
+            class="fa-solid fa-arrow-left rounded-circle p-3 text-white"
+          ></i>
+          <i
+            (click)="nextImage()"
+            id="next"
+            class="fa-solid fa-arrow-right rounded-circle p-3 text-white"
+          ></i>
+        </div>
+      </figure>
+    </div>
+  </div>
+</div>

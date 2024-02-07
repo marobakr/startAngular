@@ -1,0 +1,9 @@
+.hero {
+  background-color: #1abc9c;
+  height: 85vh;
+  color: #fff;
+  margin-top: 100px;
+}
+.hero .w-70 {
+  width: 70%;
+}
