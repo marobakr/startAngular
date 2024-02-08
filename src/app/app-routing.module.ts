@@ -7,11 +7,11 @@ import { Page4o4Component } from './page4o4/page4o4.component';
 import { HeroComponent } from './hero/hero.component';
 
 const routes: Routes = [
-  { path: '', component: HeroComponent },
-  { path: 'about', component: AboutComponent },
-  { path: 'portfolio', component: PortfolioComponent },
-  { path: 'contact', component: ContactComponent },
-  { path: '**', component: Page4o4Component },
+  { path: '', component: HeroComponent, title: 'Home' },
+  { path: 'about', component: AboutComponent, title: 'About' },
+  { path: 'portfolio', component: PortfolioComponent, title: 'Portfolio' },
+  { path: 'contact', component: ContactComponent, title: 'Contact' },
+  { path: '**', component: Page4o4Component, title: 'Not found' },
 ];
 
 @NgModule({
